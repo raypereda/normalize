@@ -33,7 +33,7 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
-		line = strings.ToUpper(line)
+		line = strings.ToLower(line)
 		line = "__label__" + line
 		line = strings.ReplaceAll(line, "'", " ' ")
 		line = strings.ReplaceAll(line, `"`, "")
@@ -47,6 +47,17 @@ func main() {
 		line = strings.ReplaceAll(line, ";", " ")
 		line = strings.ReplaceAll(line, ":", " ")
 		line = space.ReplaceAllString(line, " ")
+		line = strings.ReplaceAll(line, "0", "@")
+		line = strings.ReplaceAll(line, "1", "@")
+		line = strings.ReplaceAll(line, "2", "@")
+		line = strings.ReplaceAll(line, "3", "@")
+		line = strings.ReplaceAll(line, "4", "@")
+		line = strings.ReplaceAll(line, "5", "@")
+		line = strings.ReplaceAll(line, "6", "@")
+		line = strings.ReplaceAll(line, "7", "@")
+		line = strings.ReplaceAll(line, "8", "@")
+		line = strings.ReplaceAll(line, "9", "@")
+		// line = strings.ToValidUTF8(line, "")
 		fmt.Println(line)
 	}
 }
